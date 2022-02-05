@@ -1,6 +1,6 @@
 ---
 title: Horizontall - Hack The Box
-date: 2021-08-29 07:07:07 +07:07
+date: 2022-02-05 07:07:07 +07:07
 tags: [HTB]
 description: Easy rated machine from Hack The Box
 images: "/assets/img/horizontall/horizontall.png"
