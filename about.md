@@ -12,5 +12,4 @@ You can [report](mailto:zexionx00@gmail.com) if there is an broken link(s) or bu
 
 **Profile ✨**
 
-- {{ site.author.email }}
 - http://github.com/{{ site.author.github }}
